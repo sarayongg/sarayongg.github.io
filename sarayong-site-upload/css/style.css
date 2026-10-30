@@ -1,0 +1,291 @@
+/* Sara Yong – portfolio styles
+   One stylesheet shared by every page. Colors and sizes live in the
+   variables just below, so changing the look starts there. */
+
+:root {
+  --ink: #111;          /* main text */
+  --muted: #6b6b6b;     /* secondary text: categories, dates */
+  --line: #e6e6e6;      /* thin dividers */
+  --paper: #fff;        /* page background */
+  --tile: #f4f4f4;      /* background behind images while they load */
+
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --gutter: clamp(16px, 4vw, 48px);  /* space at the page edges */
+  --wide: 1200px;                     /* widest the page content gets */
+  --text: 40rem;                      /* comfortable reading width */
+}
+
+/* ---------- Basics ---------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { color: var(--muted); }
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+h1, h2, h3 { line-height: 1.15; margin: 0; font-weight: 600; letter-spacing: -0.01em; }
+p { margin: 0 0 1em; }
+
+.wrap { max-width: var(--wide); margin: 0 auto; padding: 0 var(--gutter); }
+
+.skip {
+  position: absolute; left: -999px; top: 0;
+  background: var(--ink); color: var(--paper); padding: 8px 12px;
+}
+.skip:focus { left: 8px; top: 8px; }
+
+/* ---------- Header ---------- */
+
+.site-header .wrap {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-top: 28px; padding-bottom: 28px;
+}
+.site-name { font-weight: 600; text-decoration: none; }
+.site-nav a { text-decoration: none; margin-left: 24px; }
+.site-nav a:first-child { margin-left: 0; }
+
+/* ---------- Home: two columns ---------- */
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.home { padding-top: 32px; }
+
+.home-intro { margin-bottom: 48px; max-width: 26rem; }
+.home-intro p { font-size: 1.125rem; }
+.home-name { font-size: 2rem; margin-bottom: 24px; }
+.home-name a { text-decoration: none; }
+
+/* Wide screens: narrow intro on the left that stays put, work on the right */
+@media (min-width: 900px) {
+  .home {
+    display: grid;
+    grid-template-columns: minmax(240px, 300px) 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .home-intro { position: sticky; top: 32px; margin-bottom: 0; }
+}
+
+.work-list { display: grid; gap: clamp(56px, 8vw, 96px); }
+
+.work-image {
+  display: block;
+  aspect-ratio: 2 / 1;
+  background: #333;     /* matches the grey frame in the placeholder thumbnails */
+  overflow: hidden;
+}
+.work-image img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  transition: opacity 0.2s ease;
+}
+.work-image:hover img { opacity: 0.85; }
+
+.work-caption {
+  display: grid;
+  gap: 16px var(--gutter);
+  margin-top: 20px;
+}
+@media (min-width: 640px) {
+  .work-caption { grid-template-columns: 1fr 2fr; }
+}
+.work-who h2 { font-size: 1.125rem; }
+.work-who p { color: var(--muted); margin: 2px 0 0; }
+.work-what h3 { font-size: 1.0625rem; font-weight: 500; margin-bottom: 8px; }
+.work-what p { color: var(--muted); font-size: 0.9375rem; }
+
+
+.button {
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid var(--ink); border-radius: 4px;
+  font-size: 0.875rem; text-decoration: none;
+}
+.button:hover { background: var(--ink); color: var(--paper); }
+
+/* ---------- Project grid (home + "More projects") ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px var(--gutter);
+  list-style: none; margin: 0; padding: 0;
+}
+@media (min-width: 640px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
+.card a { display: block; text-decoration: none; }
+.card img {
+  width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+  background: var(--tile);
+  transition: opacity 0.2s ease;
+}
+.card a:hover img { opacity: 0.85; }
+.card a:hover { color: inherit; }
+.card h2, .card h3 { font-size: 1.125rem; margin-top: 16px; }
+.card .category { color: var(--muted); font-size: 0.9375rem; margin: 2px 0 0; }
+
+/* ---------- Project page ---------- */
+
+.project-head { padding: clamp(32px, 7vw, 80px) 0 clamp(32px, 5vw, 56px); }
+.eyebrow {
+  color: var(--muted); font-size: 0.8125rem;
+  text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 12px;
+}
+.project-head h1 { font-size: clamp(2rem, 6vw, 4rem); }
+.summary { font-size: 1.25rem; max-width: var(--text); margin: 20px 0 0; }
+
+.details {
+  display: flex; flex-wrap: wrap; gap: 12px 48px;
+  margin: 32px 0 0; padding: 20px 0 0;
+  border-top: 1px solid var(--line);
+}
+.details dt { color: var(--muted); font-size: 0.8125rem; }
+.details dd { margin: 0; }
+
+.figure { margin: 0 0 clamp(48px, 8vw, 96px); }
+.figure img { width: 100%; background: var(--tile); }
+.figure.narrow img { max-width: 420px; margin: 0 auto; }
+.figure figcaption {
+  max-width: var(--text); margin: 12px auto 0;
+  color: var(--muted); font-size: 0.875rem;
+}
+
+.section ul { padding-left: 1.25em; margin: 0 0 1em; }
+.section li { margin-bottom: 0.5em; }
+.credits { color: var(--muted); font-size: 0.9375rem; }
+
+/* Two images side by side; stacks on phones */
+.figure.pair { display: grid; gap: var(--gutter); }
+@media (min-width: 640px) {
+  .figure.pair { grid-template-columns: 1fr 1fr; }
+}
+.figure + .figure { margin-top: calc(-1 * clamp(48px, 8vw, 96px) + var(--gutter)); }
+
+.section { max-width: var(--text); margin: 0 auto clamp(48px, 8vw, 96px); }
+.section h2 { font-size: 1.5rem; margin-bottom: 16px; }
+
+.more { border-top: 1px solid var(--line); padding-top: 40px; margin-top: 32px; }
+.more > h2 { font-size: 1rem; color: var(--muted); font-weight: 500; margin-bottom: 24px; }
+.more .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.more .card { max-width: 360px; }
+
+/* ---------- Footer ---------- */
+
+.site-footer { margin-top: clamp(64px, 10vw, 128px); padding: 48px 0 40px; border-top: 1px solid var(--line); }
+.site-footer h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); font-weight: 500; margin-bottom: 16px; }
+.contact { list-style: none; margin: 0 0 48px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 32px; font-size: 1.125rem; }
+.legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 32px; color: var(--muted); font-size: 0.875rem; }
+.legal p { margin: 0; }
+
+/* ---------- Case study extras (Mercator.ai) ---------- */
+
+/* Brand accents used only on the Mercator.ai visuals */
+.theme-mercator, .stat-cover {
+  --brand-dark: #1f2b22;
+  --brand: #027a3b;
+  --brand-soft: #b3d7c4;
+  --brand-tint: #eef5f0;
+}
+
+/* Signal timeline diagram */
+.timeline-figure { background: var(--brand-tint); padding: clamp(20px, 4vw, 40px); }
+.timeline {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 12px;
+}
+.timeline li {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 12px 14px; background: var(--paper);
+  border-left: 4px solid var(--line);
+}
+.timeline li.early { border-left-color: var(--brand); }
+.tl-name { font-weight: 600; }
+.tl-when { color: var(--muted); font-size: 0.875rem; }
+.tl-bands { display: none; }
+@media (min-width: 760px) {
+  .timeline { grid-template-columns: repeat(5, 1fr); }
+  .timeline li { border-left: 0; border-top: 4px solid var(--line); }
+  .timeline li.early { border-top-color: var(--brand); }
+  .tl-bands {
+    display: grid; grid-template-columns: 3fr 2fr; gap: 12px;
+    margin-top: 12px; font-size: 0.8125rem; font-weight: 500;
+  }
+  .tl-bands span { padding: 6px 10px; }
+  .tl-band-early { background: var(--brand); color: #fff; }
+  .tl-band-late { background: var(--line); color: var(--muted); }
+}
+.timeline-figure figcaption { max-width: none; margin-left: 0; }
+
+/* Cover made from type instead of a photo (home page and cards) */
+.stat-cover {
+  display: flex; flex-direction: column; justify-content: center; gap: 8px;
+  height: 100%; padding: 8%;
+  background: var(--brand-dark); color: #fff;
+}
+.stat-cover-value {
+  font-size: clamp(1.75rem, 5vw, 3.5rem); font-weight: 600;
+  letter-spacing: -0.03em; line-height: 1;
+  color: var(--brand-soft);
+}
+.stat-cover-label { font-size: clamp(0.8125rem, 1.4vw, 1rem); opacity: 0.8; }
+.card .stat-cover { aspect-ratio: 1 / 1; height: auto; }
+.card .stat-cover-value { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+/* Version timeline: four releases instead of five signals */
+.timeline .tl-when { order: -1; font-size: 0.8125rem; color: var(--brand, var(--muted)); font-weight: 600; }
+.tl-note { color: var(--muted); font-size: 0.875rem; }
+@media (min-width: 760px) {
+  .timeline.versions { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Small label above the TL;DR statement */
+.step {
+  color: var(--muted);
+  font-size: 0.8125rem; font-weight: 600; line-height: 1.4;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin: 0 0 12px;
+}
+
+/* Headings that follow a paragraph or list inside the same section */
+.section p + h2,
+.section ul + h2 { margin-top: 40px; }
+
+/* Executive summary statement under a case study header */
+.impact {
+  max-width: var(--text);
+  margin: 0 auto clamp(48px, 8vw, 96px);
+}
+.impact .step { margin-bottom: 8px; }
+.impact-text {
+  font-size: 1.25rem;
+  line-height: 1.45; margin: 0;
+}
+.impact-text strong { color: var(--ink); font-weight: 600; }
+
+/* Bulleted list with bold lead-ins, e.g. the Mercator "my focus was" list */
+.section .focus-list { margin: 20px 0 0; padding-left: 1.25em; }
+.section .focus-list li { margin-bottom: 20px; }
+
+/* Numbered goal headings, e.g. "1. Find — Search and find project leads" */
+.section .goal-head { font-size: 1.0625rem; font-weight: 600; line-height: 1.35; margin: 0 0 6px; }
+.section p + .goal-head { margin-top: 24px; }
+.section .goal-head + p + p { margin-top: 32px; }
