@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Turning spreadsheet-style data into a story buyers can read – Sara Yong</title>
+  <meta name="description" content="How Sara Yong designed Properly’s property history feature, turning raw listing data into clear, plain-language insights for Toronto home buyers.">
+  <link rel="canonical" href="https://sarayong.com/work/property-history/">
+
+  <!-- What shows up when this page is shared on social media or in messages -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Sara Yong">
+  <meta property="og:title" content="Turning spreadsheet-style data into a story buyers can read – Sara Yong">
+  <meta property="og:description" content="Data is powerful. But the difference between useful and complicated comes down to design.">
+  <meta property="og:url" content="https://sarayong.com/work/property-history/">
+  <meta property="og:image" content="https://sarayong.com/img/property-history/mobile-property-history.jpg">
+  <meta property="og:image:width" content="1180">
+  <meta property="og:image:height" content="788">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../../img/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-name" href="../../">Sara Yong</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="../../">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <header class="project-head">
+      <p class="eyebrow">Product Design</p>
+      <h1>Property history designed for buyers to make informed decisions</h1>
+      <p class="summary">Data is powerful. But the difference between useful and complicated comes down to design.</p>
+      <dl class="details">
+        <div><dt>Company</dt><dd>Properly</dd></div>
+        <div><dt>Year</dt><dd>2021</dd></div>
+        <div><dt>Role</dt><dd>Product Designer</dd></div>
+      </dl>
+    </header>
+
+    <figure class="figure">
+      <img src="../../img/property-history/mobile-property-history.jpg" width="1180" height="788"
+           alt="Property history on two phones: a summary that the home’s value is rising fast with the sold and listing history below, and a past sale opened to show its listing photos">
+    </figure>
+
+    <section class="section">
+      <p>In March 2021, we embarked on a design journey to add a much-requested feature to our listing site, the sold and listing history of each property on the market. Like any project, we started by chatting with existing users and other house-hunting Torontonians using similar sites to look at listings.</p>
+    </section>
+
+    <section class="section">
+      <h2>What can past data tell us about the future?</h2>
+      <p>From the perspective of users, we learned ways that the history of a listing can inform the decision to pursue a home (or not):</p>
+      <ul>
+        <li>It shows how the property has appreciated over time and how it compares to similar homes</li>
+        <li>It can surface potential red flags such as the quality of a home indicated by high turnover or possible listing strategies indications such as if the home is going on and off-market without selling</li>
+      </ul>
+      <p>We also turned to our internal real estate experts for insights from their experiences. They highlighted a few scenarios that could help a customer make a decision about the property:</p>
+      <ul>
+        <li>It’s never been listed before. The original owners are putting it up for sale, which can indicate it’s a great property for the long run.</li>
+        <li>A property is listed at a different price than a previous time on market. Best look for interior photos to see if there are any changes to the property.</li>
+        <li>Overall, there is no one clear-cut reason why a home would go on and off the market without selling. There can be all sorts of reasons or scenarios and it would be hard to draw conclusions with hard rules.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>By breaking down the individual pieces, we can draw more meaningful conclusions</h2>
+      <p>We started the design process by looking at comparable sites which show listing history and noticed a lot of tables akin to looking at a spreadsheet. Sure, all the right information was there, but a lot of work is put on the user to make sense of the data and draw conclusions from it (if any).</p>
+    </section>
+
+    <figure class="figure">
+      <img src="../../img/property-history/01.jpg" width="1600" height="1067" loading="lazy" decoding="async"
+           alt="Four property history tables from other Canadian real estate sites, mostly dense spreadsheet-style rows of dates, events and prices">
+      <figcaption>We took a look at other Canadian products with a similar feature to understand the existing experience of users</figcaption>
+    </figure>
+
+    <section class="section">
+      <p>Our approach was to lean into our insights and break down the problem from its first principles so that we could build the feature that solves the right problems.</p>
+      <p>Firstly, users must understand each of the individual components and what it means for their current home search. An example: What is the insightful conclusion to draw from knowing the last sold date? We found users doing mental math to figure out how long ago it was last sold or listed. Our insight was to do the math for them by showing “time ago” along with dates.</p>
+      <p>Then we explored how each listing record relates to each other and what should be the takeaway from comparing the data. An example: Looking at past listing prices, users are looking for a justification for the price change. We show a summary of photos from past listings to allow the user to quickly see if there has been any work or renovations are done that would impact the price over the years.</p>
+      <p>Taking the “don’t make them think” approach even further, we experimented with surfacing a summary of the detailed breakdown paired with insights that highlighted abnormal data which could signal a unique home. This way, a user could get a clear takeaway from this feature without digging into the data themselves.</p>
+    </section>
+
+    <figure class="figure">
+      <img src="../../img/property-history/02.jpg" width="1600" height="1067" loading="lazy" decoding="async"
+           alt="A grid of wireframes exploring different sales history layouts: tables, photo cards, a timeline and stacked lists">
+      <figcaption>We explored many different visual concepts and layouts through quick wireframes, applying our insights and first-principles approach</figcaption>
+    </figure>
+
+    <section class="section">
+      <h2>Finding additional insights and making improvements through user testing</h2>
+      <p>Once we had an iteration of the feature we were pleased with, we put scrappy, clickable prototypes in front of real users to determine whether they understood the data by getting them to answer questions about how they interpret it. We looked for general comprehension by asking questions such as “When did this home last sell and for how much?”. We also tried to get users to draw conclusions from the data to simulate a real-life scenario by asking “Why do you think the value of this home has increased so significantly since 2015?”</p>
+    </section>
+
+    <figure class="figure">
+      <img src="../../img/property-history/03.jpg" width="1600" height="1067" loading="lazy" decoding="async"
+           alt="Before and after: an earlier sales history design next to the updated property history, annotated with changes such as a plain-language summary, the current list price and larger thumbnails">
+      <figcaption>Some meaningful changes were made after learning through user testing.</figcaption>
+    </figure>
+
+    <section class="section">
+      <p>Generally speaking, this testing validated our assumptions, but still found some insightful takeaways and ways to improve the design further:</p>
+      <ul>
+        <li>Comparing history to the current list price wasn’t as easy as it could be. We saw users scrolling up and down the page to compare past selling prices with the current list price.</li>
+        <li>Not everyone wants to dig into the details. Some people are very analytical and some are satisfied with the summary. We leaned on providing “layers of information” in order for users to self-reveal the level of detail most relevant to them.</li>
+        <li>No one likes doing mental math. Wherever possible, we try to do the math for them.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>It’s a complex process to make something look simple</h2>
+      <p>In tandem with rapid prototype testing, we explored far and wide different visual UI treatments that could communicate the property history quickly and effectively.</p>
+    </section>
+
+    <figure class="figure">
+      <img src="../../img/property-history/04.jpg" width="1600" height="1067" loading="lazy" decoding="async"
+           alt="Signed-out and signed-in versions of property history side by side; signed out, sold prices are hidden behind a “See what agents see” sign-in prompt">
+      <figcaption>The difference between a signed-in experience and a signed-out one.</figcaption>
+    </figure>
+
+    <section class="section">
+      <p>The final UI relied on a few concepts to be successful:</p>
+      <ul>
+        <li>Relying on font weights, colour, and size to give a clear hierarchy to the information. At first glance, the user should be able to scan to get the most important information, then dig into the details if the first look piques interest.</li>
+        <li>Removing unnecessary elements contributing to visual clutter. It was a challenge to make an informationally dense list look lightweight and easy to read. This meant not relying on things like line separators or visible cards or containers</li>
+        <li>Using plain human language, not real estate jargon. We listen very carefully to the precise words that are said when in interviews or user testing. We use plain language that doesn’t require extra industry knowledge to understand</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Releasing iteratively and making being flexible to change</h2>
+      <p>A designer’s job is not finished once it has been “handed over” to the dev team. It would be irresponsible to omit mentioning how releasing iteratively lets us continue to learn and make design decisions quickly. An example of this is that it was our assumption that we should collapse similar rows to show a more high-level summary of those rows. While in reality, real data didn’t show a need for this and users appreciated the level of detail shown by seeing all the rows at once. This insight led us to be leaner and avoid building that functionality altogether.</p>
+    </section>
+
+    <figure class="figure">
+      <img src="../../img/property-history/05.jpg" width="1600" height="1067" loading="lazy" decoding="async"
+           alt="A design iteration with similar listings collapsed into one row, next to the production version that shows every listing as its own row">
+      <figcaption>We quickly learned that users appreciate seeing all details instead of grouping similar information, so we didn’t build the functionality to collapse similar rows.</figcaption>
+    </figure>
+
+    <section class="section">
+      <p>We also iterated quickly with determining the right position on the page. Within a few days of an initial release, we experimented with putting the element higher on the page, and immediately we saw 44% higher sign-in initiations through this feature throughout the next week of data.</p>
+      <p>And as thousands of users benefit from this feature and the insights it brings to their home search, we will keep learning from behaviours and metrics to continue improving the features for Canadians. Property history is available for all listings in Toronto and the GTA at properly.ca/buy.</p>
+      <p class="credits">Special mentions to David Pardy, Product Lead, Douglas Anderson, Senior Software Developer, and Daniel Gipps, Senior Software Developer, to whom the project would have not come to life without.</p>
+      <p class="credits">Originally published on <a href="https://inside.properly.ca/property-history-designed-for-buyers-to-make-informed-decisions-25d42c69f271" target="_blank" rel="noopener">Inside Properly</a>, August 10, 2021.</p>
+    </section>
+
+    <section class="more" aria-labelledby="more-title">
+      <h2 id="more-title">More projects</h2>
+      <ul class="grid">
+        <li class="card">
+          <a href="../mercator-ai/">
+            <img class="dark-green fill" src="../../img/mercator-ai/houston-lot.webp" width="2000" height="1336" loading="lazy" decoding="async"
+                 alt="Mercator.ai Project Map on a laptop, showing an empty lot in Houston">
+            <h3>From MVP to $750K ARR</h3>
+            <p class="category">Mercator.ai</p>
+          </a>
+        </li>
+        <li class="card">
+          <a href="../properly-brand/">
+            <img class="fill" src="../../img/properly-brand/cover.webp" width="2000" height="1336" loading="lazy" decoding="async"
+                 alt="The Properly logo in its updated green colours on four backgrounds">
+            <h3>Creating a brand that survived an acquisition</h3>
+            <p class="category">Properly</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="wrap">
+      <h2>Get in touch.</h2>
+      <ul class="contact">
+        <li><a href="https://www.linkedin.com/in/sarayong/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+      <div class="legal">
+        <p class="copyright">© Sara Yong 2026</p>
+        <p class="credit">This website was made using Claude Code. Its contents are human-made.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
