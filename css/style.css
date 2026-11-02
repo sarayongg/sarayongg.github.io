@@ -87,7 +87,7 @@ p { margin: 0 0 1em; }
 
 .work-image {
   display: block;
-  aspect-ratio: 2 / 1;
+  aspect-ratio: 3 / 2;   /* same shape as the case study images, so they can be reused here */
   background: #333;     /* matches the grey frame in the placeholder thumbnails */
   overflow: hidden;
 }
@@ -133,11 +133,13 @@ p { margin: 0 0 1em; }
 }
 
 .card a { display: block; text-decoration: none; }
+/* Same 3:2 frame as the home page and the case study images, so one image works everywhere */
 .card img {
-  width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
-  background: var(--tile);
+  width: 100%; aspect-ratio: 3 / 2; object-fit: contain;
+  background: #333;
   transition: opacity 0.2s ease;
 }
+.card img.dark-green { background: #1f2b22; }
 .card a:hover img { opacity: 0.85; }
 .card a:hover { color: inherit; }
 .card h2, .card h3 { font-size: 1.125rem; margin-top: 16px; }
@@ -164,6 +166,7 @@ p { margin: 0 0 1em; }
 .figure { margin: 0 0 clamp(48px, 8vw, 96px); }
 .figure img { width: 100%; background: var(--tile); }
 .figure.narrow img { max-width: 420px; margin: 0 auto; }
+.figure.medium { max-width: 52rem; margin-left: auto; margin-right: auto; }
 .figure figcaption {
   max-width: var(--text); margin: 12px auto 0;
   color: var(--muted); font-size: 0.875rem;
@@ -182,6 +185,9 @@ p { margin: 0 0 1em; }
 
 .section { max-width: var(--text); margin: 0 auto clamp(48px, 8vw, 96px); }
 .section h2 { font-size: 1.5rem; margin-bottom: 16px; }
+/* A heading that introduces the images right below it */
+.section.lead-in { margin-bottom: 24px; }
+.section.lead-in > :last-child { margin-bottom: 0; }
 
 .more { border-top: 1px solid var(--line); padding-top: 40px; margin-top: 32px; }
 .more > h2 { font-size: 1rem; color: var(--muted); font-weight: 500; margin-bottom: 24px; }
@@ -199,7 +205,7 @@ p { margin: 0 0 1em; }
 /* ---------- Case study extras (Mercator.ai) ---------- */
 
 /* Brand accents used only on the Mercator.ai visuals */
-.theme-mercator, .stat-cover {
+.theme-mercator {
   --brand-dark: #1f2b22;
   --brand: #027a3b;
   --brand-soft: #b3d7c4;
@@ -235,20 +241,8 @@ p { margin: 0 0 1em; }
 }
 .timeline-figure figcaption { max-width: none; margin-left: 0; }
 
-/* Cover made from type instead of a photo (home page and cards) */
-.stat-cover {
-  display: flex; flex-direction: column; justify-content: center; gap: 8px;
-  height: 100%; padding: 8%;
-  background: var(--brand-dark); color: #fff;
-}
-.stat-cover-value {
-  font-size: clamp(1.75rem, 5vw, 3.5rem); font-weight: 600;
-  letter-spacing: -0.03em; line-height: 1;
-  color: var(--brand-soft);
-}
-.stat-cover-label { font-size: clamp(0.8125rem, 1.4vw, 1rem); opacity: 0.8; }
-.card .stat-cover { aspect-ratio: 1 / 1; height: auto; }
-.card .stat-cover-value { font-size: clamp(1.5rem, 3vw, 2rem); }
+/* Home thumbnail frame matching the Mercator.ai screenshots' green background */
+.work-image.dark-green { background: #1f2b22; }
 
 /* Version timeline: four releases instead of five signals */
 .timeline .tl-when { order: -1; font-size: 0.8125rem; color: var(--brand, var(--muted)); font-weight: 600; }
@@ -284,6 +278,7 @@ p { margin: 0 0 1em; }
 /* Bulleted list with bold lead-ins, e.g. the Mercator "my focus was" list */
 .section .focus-list { margin: 20px 0 0; padding-left: 1.25em; }
 .section .focus-list li { margin-bottom: 20px; }
+.section .focus-list.no-bullets { list-style: none; padding-left: 0; }
 
 /* Numbered goal headings, e.g. "1. Find — Search and find project leads" */
 .section .goal-head { font-size: 1.0625rem; font-weight: 600; line-height: 1.35; margin: 0 0 6px; }
