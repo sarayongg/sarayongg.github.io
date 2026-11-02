@@ -140,6 +140,10 @@ p { margin: 0 0 1em; }
   transition: opacity 0.2s ease;
 }
 .card img.dark-green { background: #1f2b22; }
+/* Covers already shaped 3:2 fill the frame edge to edge, so no thin
+   dark line shows around them (square covers still fit inside instead) */
+.card img.fill,
+.work-image img.fill { object-fit: cover; }
 .card a:hover img { opacity: 0.85; }
 .card a:hover { color: inherit; }
 .card h2, .card h3 { font-size: 1.125rem; margin-top: 16px; }
