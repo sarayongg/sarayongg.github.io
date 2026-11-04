@@ -193,6 +193,14 @@ p { margin: 0 0 1em; }
 .section.lead-in { margin-bottom: 24px; }
 .section.lead-in > :last-child { margin-bottom: 0; }
 
+/* A quote from a teammate */
+.quote { margin: 0 0 32px; padding-left: 20px; border-left: 2px solid var(--line); }
+.quote:last-child { margin-bottom: 0; }
+.quote p { margin: 0 0 8px; }
+.quote strong { font-weight: 600; }
+.quote footer { color: var(--muted); font-size: 0.9375rem; }
+.section p + .quote { margin-top: 20px; }
+
 .more { border-top: 1px solid var(--line); padding-top: 40px; margin-top: 32px; }
 .more > h2 { font-size: 1rem; color: var(--muted); font-weight: 500; margin-bottom: 24px; }
 .more .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
